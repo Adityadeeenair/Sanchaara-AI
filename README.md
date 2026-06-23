@@ -168,11 +168,6 @@ python serve.py
 * **Landing Page**: `http://localhost:8000/frontend/index.html`
 * **Console Dashboard**: `http://localhost:8000/frontend/dashboard.html`
 
-### Step 3: Run the Streamlit Operations Tool
-In a separate terminal window, run the analytics application:
-```bash
-streamlit run app.py
-```
 
 ---
 
