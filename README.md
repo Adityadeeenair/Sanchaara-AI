@@ -168,7 +168,7 @@ A `vercel.json` file is configured in the root directory. Simply import this rep
 | **SDG 3** | Good Health & Well-being — Reduces engine-idling emissions in major corridors. |
 | **SDG 16** | Strong Institutions — Data-driven routing replaces subjective patrol assignments. |
 
-### Team: RUN D NAIR
+### Team: TEAM NIZZY
 - **Sohan S Varkhedi** — Data / ML / Backend
 - **Rahul C Araganji** — Full-Stack / Frontend
 - **Aditya D Nair** — Backend / Scoring Logic
