@@ -180,8 +180,8 @@ The entire Sanchaara AI frontend (landing page + console dashboard + all assets)
 2. Go to [Render](https://render.com) → **New** → **Static Site**.
 3. Connect your GitHub repository.
 4. Set the following:
-   - **Root Directory**: ` ` (leave blank — repo root)
-   - **Build Command**: ` ` (leave blank — no build step)
+   - **Root Directory**: (leave blank — repo root)
+   - **Build Command**:  (leave blank — no build step)
    - **Publish Directory**: `frontend`
 5. Click **Deploy**.
 
