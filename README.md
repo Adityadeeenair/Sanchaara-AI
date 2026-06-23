@@ -100,26 +100,55 @@ Sanchaara AI features a custom client-side localization module (`i18n.js`) with 
 ## 🛠️ Tech Stack & Directory Structure
 
 ```
-sanchaara-ai/
-├── app.py                    # Streamlit internal ops tool
-├── requirements.txt          # Python dependencies
-├── serve.py                  # Local frontend development server
-├── vercel.json               # Static Vercel routing configuration
+Sanchaara-AI-main/
+├── .gitignore
+├── .streamlit/
+│   └── config.toml
+├── app.py
+├── index.html
+├── requirements.txt
+├── serve.py
+├── vercel.json
 ├── data/
-│   ├── raw/                  # Original CSV files (gitignored)
-│   └── processed/
-│       └── hotspots.json     # Preprocessed 120 hotspots schema
-├── src/
-│   ├── data_loader.py        # Raw data cleaning & profile processing
-│   ├── hotspot_engine.py     # DBSCAN clustering & impact calculations
-│   └── i18n.py               # Streamlit translation dictionary
-├── frontend/                 # Static Landing & Console Dashboard
-│   ├── index.html            # Rebranded Landing Page
-│   ├── dashboard.html        # Console Dashboard Panel
-│   ├── css/                  # Landing and theme stylesheets
-│   └── js/                   # i18n, map, charts, and simulator controllers
-└── docs/
-    └── decisions.md          # Architectural decision logs
+│   ├── processed/
+│   │   └── hotspots.json
+│   └── raw/
+│       └── .gitkeep
+├── docs/
+│   ├── decisions.md
+│   └── tasks.md
+├── frontend/
+│   ├── index.html
+│   ├── dashboard.html
+│   ├── assets/
+│   │   ├── bangalore_traffic_cctv_1_1781876572508.png
+│   │   ├── bangalore_traffic_cctv_2_1781876595015.png
+│   │   ├── bangalore_traffic_cctv_3_1781876616173.png
+│   │   ├── bangalore_traffic_cctv_4_1781876647818.png
+│   │   ├── bangalore_traffic_cctv_5_1781876681365.png
+│   │   ├── bangalore_traffic_cctv_6_1781876731105.png
+│   │   └── officer.png
+│   ├── css/
+│   │   ├── animations.css
+│   │   ├── dashboard.css
+│   │   ├── hero.css
+│   │   ├── landing.css
+│   │   └── theme.css
+│   └── js/
+│       ├── charts.js
+│       ├── dashboard.js
+│       ├── hero3d.js
+│       ├── hotspots_data.js
+│       ├── i18n.js
+│       ├── landing.js
+│       ├── map.js
+│       └── simulator.js
+└── src/
+    ├── __init__.py
+    ├── data_loader.py
+    ├── hotspot_engine.py
+    └── i18n.py
+
 ```
 
 ---
@@ -144,14 +173,22 @@ In a separate terminal window, run the analytics application:
 ```bash
 streamlit run app.py
 ```
-* **Streamlit App URL**: `http://localhost:8501`
 
 ---
 
 ## 🌐 Production Cloud Deployment
 
-### 1. Static Frontend (Vercel)
-A `vercel.json` file is configured in the root directory. Simply import this repository to Vercel, keep the default build parameters, and click **Deploy**. Vercel will automatically serve `/frontend/index.html` at the domain root while preserving asset routing.
+### 1. Static Frontend - Render (Full Platform)
+The entire Sanchaara AI frontend (landing page + console dashboard + all assets) deploys as a static site on Render.
+**To deploy:**
+1. Push this repository to GitHub.
+2. Go to [Render](https://render.com) → **New** → **Static Site**.
+3. Connect your GitHub repository.
+4. Set the following:
+   - **Root Directory**: ` ` (leave blank — repo root)
+   - **Build Command**: ` ` (leave blank — no build step)
+   - **Publish Directory**: `frontend`
+5. Click **Deploy**.
 
 ### 2. Streamlit Cloud
 1. Push your master branch to GitHub.
